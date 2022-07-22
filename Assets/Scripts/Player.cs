@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float travelSpeed = 2f;
+    [SerializeField] private float travelSpeed;
     private Camera camera;
     private bool watchRight = true;
     [SerializeField] private Animator Animator;
     private float offsetZ;
-    // Start is called before the first frame update
     void Start()
     {
         camera = Camera.main;
         offsetZ = gameObject.transform.position.z - camera.transform.position.z;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Animator.SetBool("Run", false);
